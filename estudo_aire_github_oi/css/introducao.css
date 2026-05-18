@@ -1,0 +1,75 @@
+.introducao-container {
+  max-width: 1200px;
+  padding: 40px 20px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 100px;
+  align-items: center;
+}
+
+.introducao-container h1 {
+  font-size: 4.5rem;
+  line-height: 1.125;
+  margin-bottom: 1.875rem;
+  position: relative;
+  /*Ao definir um elemento como relative, ele se torna "P.R" para um filho que tenha position absolute*/
+  font-family: "Playfair Display", Arial, sans-serif;
+  font-weight: 800;
+}
+
+.introducao-container h1::before {
+  content: "";
+  display: block;
+  width: 130px;
+  height: 100px;
+  background-image: url("../img/deco.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  /*primeiro center → centraliza horizontalmente segundo center → centraliza verticalmente*/
+  position: absolute;
+  /*remove o elemento do fluxo normal (static), é como se tornasse um fantasma que flutua na página, com o pai relative, definimos o posicionamento que desejamos com as propriedades top, bottom, left, right que não são acessadas com static.*/
+  top: -20px;
+  left: -40px;
+  z-index: -1;
+}
+
+.introducao-container p {
+  font-size: 1.5rem;
+  color: #525252;
+}
+
+@media (max-width: 1000px) {
+  .introducao-container h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .introducao-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .introducao-container h1 {
+    font-size: 2rem;
+    /*diminui a fonte para a imagem e texto diminuirem proporcional */
+  }
+
+  .introducao-container h1::before {
+    width: 30px;
+    height: 10px;
+    left: 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .introducao-container {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .introducao-container img {
+    max-width: 70%;
+  }
+}

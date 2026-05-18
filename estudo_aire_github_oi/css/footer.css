@@ -1,0 +1,43 @@
+.footer {
+  background: #0a0b0f;
+  color: #ced3d9;
+}
+
+.footer-container {
+  max-width: 1200px;
+  padding: 120px 20px 60px 20px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 50px;
+}
+
+.subtitulo-contato {
+  font-family: "Playfair Display", Arial, sans-serif;
+  font-size: 3rem;
+  line-height: 1;
+  text-transform: uppercase;
+  word-break: break-all;
+
+  /*cada linha com até 4 caracter q tem o tamanho 0*/
+}
+
+.footer-container a {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+.copy {
+  font-size: 1.125rem;
+  color: #8f8f8f;
+  margin-left: 150px;
+}
+
+@media (max-width: 1000px) {
+  .copy {
+    margin-left: initial;
+  }
+}
